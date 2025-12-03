@@ -1,16 +1,20 @@
+import { Link } from "react-router-dom"
+
 const Header=()=>{
     return(
         <header className="shadow-md">
-            <div className="flex items-center justify-between px-8 py-2 max-w-7xl mx-auto">
-                <div className="flex items-center">
+            <div className="flex items-center justify-between px-8 py-4 sm:max-w-7xl mx-auto">
+                
+                <Link to={'/'} className="flex items-center">
                     <img
                         src="https://cdn.prod.website-files.com/61b9e0dd381626819c8d4f83/65e2198d48039ba6444f602b_logo%20hashtag%20-%20h.webp"
                         alt="Logo da Hashtag"
                         className="max-h-10"
                     />
                     <a href="" className="text-3xl font-bold text-red-400">ashbnb</a>
-                </div>
-                <div className="flex items-center border border-gray-300 px-4 py-2 rounded-full shadow-md">
+                </Link>
+
+                <Link to={'/'} className="hidden lg:flex items-center border border-gray-300 px-4 py-2 rounded-full shadow-md">
                     <p className="border-r border-r-gray-300 pr-4">Qualquer lugar</p>
                     <p className="border-r border-r-gray-300 px-4">Qualquer Semana</p>
                     <p className="px-4">Qualquer Hóspedes</p>
@@ -30,9 +34,9 @@ const Header=()=>{
                             />
                         </svg>
                     </div>
-                </div>
+                </Link>
 
-                <div className="flex items-center border border-gray-300 px-4 py-2 rounded-full shadow-md gap-2">
+                <Link to={'/login'} className="flex items-center border border-gray-300 px-4 py-2 rounded-full shadow-md gap-2">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -61,8 +65,8 @@ const Header=()=>{
                         />
                     </svg>
 
-                    <p className="px-4">Diego XYZ</p>
-                </div>
+                    <p className="max-w-20 truncate sm:max-w-32">Diego XYZ</p>
+                </Link>
             </div>
         </header>
     )
