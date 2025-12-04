@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Header=()=>{
+const Header=({user})=>{
     return(
         <header className="shadow-md">
             <div className="flex items-center justify-between px-8 py-4 sm:max-w-7xl mx-auto">
@@ -35,8 +35,7 @@ const Header=()=>{
                         </svg>
                     </div>
                 </Link>
-
-                <Link to={'/login'} className="flex items-center border border-gray-300 px-4 py-2 rounded-full shadow-md gap-2">
+                <Link to={user ? "/account" : "/login"} className="flex items-center border border-gray-300 px-4 py-2 rounded-full shadow-md gap-2">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -65,7 +64,9 @@ const Header=()=>{
                         />
                     </svg>
 
-                    <p className="max-w-20 truncate sm:max-w-32">Diego XYZ</p>
+                    {user ? (
+                        <p className="max-w-20 truncate sm:max-w-32">{user.name}</p>
+                    ):<></>}
                 </Link>
             </div>
         </header>
